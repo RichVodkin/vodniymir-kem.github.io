@@ -38,5 +38,4 @@ yarn-error.log*
 .less-cache/
 
 # Image optimization artifacts (if applicable)
-*.webp
 *.avif
