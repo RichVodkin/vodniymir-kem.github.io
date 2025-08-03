@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Добавляем метки для городов
             const cities = [
-                { name: "Кемерово", coords: [55.354968, 86.087314], color: "#1e40af" },
+                { name: "Кемерово", coords: [55.363166, 86.072868], color: "#1e40af" },
                 { name: "Новокузнецк", coords: [53.757572, 87.136093], color: "#3b82f6" },
                 { name: "Прокопьевск", coords: [53.895355, 86.744657], color: "#3b82f6" },
                 { name: "Междуреченск", coords: [53.693575, 88.065342], color: "#3b82f6" },
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleCard(card);
         });
     });
-    
+
     // Автооткрытие на мобильных
         function handleMobileView() {
             const isMobile = window.innerWidth <= 768;
