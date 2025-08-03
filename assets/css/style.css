@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Rubik:wght@300;400;500&display=swap');
+        
+body {
+    font-family: 'Manrope', sans-serif;
+    scroll-behavior: smooth;
+    color: #1a365d;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* Новые стили для Hero Section */
+.new-hero {
+    background-color: #0c4a6e;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.new-hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(12, 74, 110, 1), rgba(12, 74, 110, 0));
+    z-index: 1;
+}
+
+.new-hero h1 {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+/* Улучшенные стили для подложки */
+.new-hero .bg-black\/30 {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Для лучшей читаемости на светлых фонах */
+.new-hero h1 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.new-hero p {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Анимация для блоков преимуществ */
+.new-hero .grid > div {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.new-hero .grid > div:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-15px);}
+    60% {transform: translateY(-10px);}
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Стили для Consultation Section */
+#consultation {
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+#consultation:before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, white, transparent);
+    z-index: 1;
+}
+
+/* Галерея до/после */
+.before-after-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.before-after-slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+.before-after-slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Карточки отзывов */
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Анимации */
+@keyframes pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+}
+
+.animate-pulse {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+/* Анимация появления блоков */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Задержки анимации */
+.animation-delay-100 {
+    animation-delay: 0.1s;
+}
+.animation-delay-200 {
+    animation-delay: 0.2s;
+}
+.animation-delay-300 {
+    animation-delay: 0.3s;
+}
+.animation-delay-400 {
+    animation-delay: 0.4s;
+}
+
+/* Логотипы партнеров */
+.partner-logo {
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    opacity: 0.8;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Стили для карточек услуг */
+.service-card {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.service-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.service-card .service-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.service-card.active .service-details {
+    max-height: 500px;
+    display: block;
+}
+
+.service-card.active .toggle-details-btn i {
+    transform: rotate(180deg);
+}
+
+.toggle-details-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .service-card {
+        margin-bottom: 2rem;
+    }
+    
+    .service-card .service-details {
+        max-height: none;
+        display: block !important;
+    }
+    
+    .service-card .toggle-details-btn {
+        display: none !important;
+    }
+    
+    .service-card .h-20 {
+        height: auto !important;
+        margin-bottom: 1rem;
+    }
+    
+    /* Центрируем все пункты списка */
+    .service-card ul li {
+        justify-content: center !important;
+    }
+    
+    /* Адаптация нового Hero Section */
+    .new-hero {
+        min-height: 90vh;
+    }
+    
+    .new-hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+}

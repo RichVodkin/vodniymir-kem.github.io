@@ -3,155 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Чистые Бассейны | Обслуживание бассейнов в Кемерово и области</title>
+    <title>Водный Мир Кемерово | Оборудование и обслуживание бассейнов с 2001 года</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Rubik:wght@300;400;500&display=swap');
-        
-        body {
-            font-family: 'Manrope', sans-serif;
-            scroll-behavior: smooth;
-            color: #1a365d;
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Rubik', sans-serif;
-            font-weight: 500;
-            line-height: 1.3;
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://img.freepik.com/free-photo/swimming-pool-with-sea-views_74190-16276.jpg?t=st=1753962815~exp=1753966415~hmac=53deaa5bf6badc99eb75cec8795b6ee9fb9ad73b68f6e090a8da9a0ee48f69ea&w=2000');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .before-after-container {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .before-after-slider {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 50%;
-            overflow: hidden;
-        }
-        
-        .before-after-slider img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        input[type="range"] {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10;
-        }
-        
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 15px;
-            height: 15px;
-            background: white;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        
-        .testimonial-card {
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 0.4; }
-        }
-        
-        .animate-pulse {
-            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
-        
-        .water-ripple {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .water-ripple:after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%);
-            transform-origin: 50% 50%;
-        }
-        
-        .water-ripple:focus:after {
-            animation: ripple 1s ease-out;
-        }
-        
-        @keyframes ripple {
-            0% {
-                transform: scale(0, 0);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(20, 20);
-                opacity: 0;
-            }
-        }
-        
-        .wave-hover {
-            transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-        }
-        
-        .wave-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 114, 245, 0.15);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
+     <!-- Обновленная Navigation -->
     <nav class="bg-gradient-to-r from-blue-800 to-blue-600 text-white sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-swimming-pool text-2xl"></i>
-                <span class="text-xl font-bold">Водный Мир Кемерово</span>
-            </div>
-            <div class="hidden md:flex space-x-6">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2 overflow-hidden">
+        <i class="fas fa-swimming-pool text-2xl flex-shrink-0"></i>
+        <div class="flex items-baseline min-w-0">
+            <span class="text-xl font-bold truncate">Водный Мир Кемерово</span>
+            <span class="text-xs bg-blue-500 px-2 py-1 rounded ml-2 whitespace-nowrap flex-shrink-0">
+            с 2001 года
+            </span>
+        </div>
+        </div>
+            <div class="hidden md:flex space-x-6 items-center">
                 <a href="#services" class="hover:text-blue-200 transition">Услуги</a>
                 <a href="#gallery" class="hover:text-blue-200 transition">Наши работы</a>
                 <a href="#testimonials" class="hover:text-blue-200 transition">Отзывы</a>
                 <a href="#contact" class="hover:text-blue-200 transition">Контакты</a>
+                <!-- Добавленная кнопка "Заказать звонок" -->
+                <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ml-4">
+                    Заказать звонок
+                </a>
             </div>
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-white focus:outline-none">
+            <div class="md:hidden flex items-center">
+                <button id="menu-toggle" class="text-white focus:outline-none mr-3">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
+                <!-- Мобильная версия кнопки -->
+                <a href="#contact" class="bg-blue-500 text-white p-2 rounded-full">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
             </div>
         </div>
         <!-- Mobile menu -->
@@ -160,343 +47,491 @@
             <a href="#gallery" class="block py-2 hover:text-blue-200 transition">Наши работы</a>
             <a href="#testimonials" class="block py-2 hover:text-blue-200 transition">Отзывы</a>
             <a href="#contact" class="block py-2 hover:text-blue-200 transition">Контакты</a>
+            <!-- Кнопка в мобильном меню -->
+            <a href="#contact" class="mt-3 block bg-blue-500 text-white text-center font-medium py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">
+                Заказать звонок
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero text-white py-24 md:py-40 px-4 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-600 opacity-90"></div>
-        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-400 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
-        <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-600 rounded-full filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
-        <div class="container mx-auto max-w-4xl text-center relative z-10">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Профессиональное обслуживание бассейнов в Кемерово и области от 2900 руб.</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Быстрый выезд, гарантия качества, доступные цены. Работаем круглосуточно в радиусе 150 км от Кемерово.</p>
+    <!-- Новый Hero Section с фоновой картинкой -->
+    <section class="new-hero relative min-h-screen flex flex-col justify-center overflow-hidden">
+        <!-- Фоновое изображение -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/95 to-blue-700/90"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/img/gallery/hero-pool.jpg');"></div>
+        
+        <!-- Водяной эффект -->
+        <div class="absolute inset-0 bg-[url('assets/img/water-pattern.png')] opacity-10"></div>
+        
+        <!-- Основной контент - центрированный по вертикали и горизонтали -->
+        <div class="container mx-auto px-4 relative z-10 flex flex-col items-center">
+            <!-- Обертка для УТП с полупрозрачной подложкой -->
+            <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 md:p-10 w-full max-w-3xl text-center">
+                <!-- Логотип компании -->
+                <div class="flex justify-center items-center mb-6">
+                    <i class="fas fa-swimming-pool text-4xl text-white mr-3"></i>
+                    <span class="text-2xl font-bold text-white">Водный Мир Кемерово</span>
+                </div>
+                
+                <!-- Большой УТП -->
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
+                    Обслуживаем бассейны<br> 
+                    <span class="text-blue-300">по всему Кузбассу!</span>
+                </h1>
+                
+                <!-- Подзаголовок -->
+                <p class="text-lg md:text-xl text-blue-100 mb-8 mx-auto max-w-2xl">
+                    Продаём оборудование, химию и профессионально обслуживаем бассейны более 20 лет
+                </p>
+                
+                <!-- Кнопки призыва к действию -->
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a href="#consultation" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-full transition duration-300 shadow-lg hover:shadow-xl flex items-center justify-center">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Получить консультацию
+                    </a>
+                    <a href="tel:+73842362276" class="bg-white/10 hover:bg-white/20 text-white font-medium py-3 px-6 rounded-full transition duration-300 border border-white/30 flex items-center justify-center">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        +7 (3842) 36-22-76
+                    </a>
+                </div>
+            </div>
             
-            <div class="max-w-md mx-auto bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-xl">
-                <h3 class="text-xl font-semibold mb-4">Оставьте заявку прямо сейчас</h3>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Ваше имя" class="w-full px-4 py-2 rounded bg-white bg-opacity-90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="tel" placeholder="Телефон или Telegram" class="w-full px-4 py-2 rounded bg-white bg-opacity-90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded transition duration-300 relative overflow-hidden group">
-                        <span class="relative z-10">Оставить заявку</span>
-                        <span class="absolute inset-0 bg-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    </button>
-                </form>
-                <p class="text-sm mt-3">Мы перезвоним вам в течение 15 минут</p>
+            <!-- Блок преимуществ -->
+            <div class="mt-12 w-full max-w-4xl px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <div class="bg-black/30 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 flex flex-col items-center justify-center">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1">24</div>
+                        <div class="text-blue-200 text-xs md:text-sm">года опыта</div>
+                    </div>
+                    <div class="bg-black/30 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 flex flex-col items-center justify-center">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1">150+</div>
+                        <div class="text-blue-200 text-xs md:text-sm">городов</div>
+                    </div>
+                    <div class="bg-black/30 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 flex flex-col items-center justify-center">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1">12</div>
+                        <div class="text-blue-200 text-xs md:text-sm">месяцев гарантии</div>
+                    </div>
+                    <div class="bg-black/30 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 flex flex-col items-center justify-center">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1">24ч</div>
+                        <div class="text-blue-200 text-xs md:text-sm">выезд</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Анимированная стрелка вниз -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#consultation" class="text-white text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Переработанный старый Hero Section (теперь Consultation Section) -->
+    <section id="consultation" class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Левая колонка: Описание компании -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                        <span class="text-blue-600">Более 20 лет</span> профессионального обслуживания бассейнов
+                    </h2>
+                    
+                    <div class="prose max-w-none text-gray-600 mb-8">
+                        <p>Компания "Водный Мир Кемерово" работает на рынке обслуживания бассейнов с 2001 года. За это время мы накопили огромный опыт и обслужили тысячи бассейнов различной сложности - от частных домов до крупных баз отдыха и муниципальных объектов.</p>
+                        
+                        <p>Наши специалисты проходят регулярное обучение и используют только профессиональное оборудование и сертифицированные химикаты ведущих мировых производителей.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Официальный договор</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Гарантия на работы</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Сертифицированные специалисты</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Экологичные материалы</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-award text-2xl text-blue-600"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-800">Работаем с лучшими поставщиками</div>
+                            <div class="text-sm text-gray-600">Из России, Европы и Азии</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Правая колонка: Форма заявки -->
+                <div>
+                    <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100 shadow-xl">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Оставьте заявку на консультацию</h3>
+                        <p class="text-gray-600 mb-6">Наш специалист перезвонит в течение 15 минут</p>
+                        
+                        <form class="space-y-4" id="consultation-form">
+                            <div>
+                                <label class="block text-gray-700 mb-1 text-sm font-medium">Ваше имя</label>
+                                <input type="text" placeholder="Иван Иванов" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 mb-1 text-sm font-medium">Телефон</label>
+                                <input type="tel" placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 mb-1 text-sm font-medium">Предпочтительный способ связи</label>
+                                <div class="flex space-x-2">
+                                    <button type="button" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-lg transition">Телефон</button>
+                                    <button type="button" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-lg transition">WhatsApp</button>
+                                    <button type="button" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-lg transition">Telegram</button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <input type="checkbox" id="consultation-privacy-consent" required
+                                    class="mt-1 mr-2 rounded focus:ring-blue-500 h-4 w-4 text-blue-600 flex-shrink-0">
+                                <label for="consultation-privacy-consent" class="text-xs text-gray-600 text-left">
+                                    Я соглашаюсь с 
+                                    <a href="/privacy-policy.html" class="text-blue-600 hover:underline">политикой конфиденциальности</a>
+                                    и обработкой персональных данных
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 relative overflow-hidden group mt-4">
+                                <span class="relative z-10">Получить консультацию</span>
+                                <span class="absolute inset-0 bg-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Блок с контактами -->
+                    <div class="mt-6 bg-blue-50 rounded-xl p-6 border border-blue-100">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Контакты</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt mr-3 text-blue-600"></i>
+                                <span>+7 (3842) 36-22-76</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-whatsapp mr-3 text-blue-600"></i>
+                                <span>+7 903 944-84-73</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-3 text-blue-600"></i>
+                                <span>Кемерово, пр-т Кузнецкий, 14А</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock mr-3 text-blue-600"></i>
+                                <span>Пн-Пт: 9:00-18:00, Сб: 10:00-16:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-<!-- Services Section -->
-<section id="services" class="py-16 px-4 bg-white">
-    <div class="container mx-auto max-w-6xl">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Наши услуги</h2>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <!-- Service 1 -->
-            <div class="service-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden group transition-all duration-300 h-auto min-h-[18rem] hover:min-h-[30rem]">
-                <div class="p-6 relative h-full flex flex-col">
-                    <!-- Иконка -->
-                    <div class="w-20 h-20 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-blue-600 
-                               transition-all duration-500 
-                               group-hover:absolute group-hover:top-6 group-hover:left-6 group-hover:m-0 group-hover:w-16 group-hover:h-16">
-                        <i class="fas fa-broom text-3xl group-hover:text-2xl transition-all"></i>
+    <!-- Value Section -->
+    <section class="py-16 px-4 bg-blue-800 text-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Почему выбирают нас</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-history text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-semibold mb-2">24 года опыта</h3>
+                    <p class="text-blue-100">Работаем на рынке с 2001 года</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-truck text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Срочный выезд</h3>
+                    <p class="text-blue-100">Выезжаем в течение 24 часов</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Гарантия 12 месяцев</h3>
+                    <p class="text-blue-100">На оборудование и монтажные работы</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">По всей области</h3>
+                    <p class="text-blue-100">Работаем в радиусе 150 км от Кемерово</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Наши услуги</h2>
+                <p class="text-gray-600">Комплексные решения для вашего бассейна от профессионалов с 20-летним опытом</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Карточка 1 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg border border-blue-100 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <div class="relative h-48 bg-gradient-to-r from-blue-50 to-blue-100 flex items-center justify-center">
+                    <img src="assets/img/services/equipment.webp" alt="Оборудование для бассейна" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full border-4 border-white flex items-center justify-center shadow-lg z-10">
+                        <i class="fas fa-tools text-2xl text-blue-600"></i>
+                    </div>
+                </div>
+                
+                <div class="pt-10 pb-6 px-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Оборудование и монтаж</h3>
                     
-                    <!-- Заголовок -->
-                    <h3 class="text-xl font-semibold text-center mb-4 px-4
-                              transition-all duration-300 opacity-100
-                              group-hover:opacity-0 group-hover:-translate-y-4">
-                        Чистка и обслуживание
-                    </h3>
-                    
-                    <!-- Контент -->
-                    <div class="service-content flex-grow overflow-hidden max-h-0 transition-all duration-500 group-hover:max-h-[24rem]">
-                        <div class="pb-4">
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Комплексная разовая чистка</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Регулярное обслуживание</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Чистка дна и стенок</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Дезинфекция воды</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Балансировка химии</span>
-                                </li>
-                            </ul>
-                            
-                            <!-- Ценовой блок -->
-                            <div class="price-block bg-blue-50 rounded-lg p-4 mt-4 text-center border border-blue-100">
-                                <div class="text-gray-600 text-sm mb-1">Стоимость:</div>
-                                <div class="text-2xl font-bold text-blue-700">2 900 ₽</div>
-                                <div class="text-xs text-gray-500 mt-1">за разовую чистку</div>
-                                <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition duration-300 w-full text-sm">
-                                    Заказать
-                                </button>
+                    <div class="mb-2 md:mb-0 md:h-6 h-4"></div>
+
+                    <div class="service-details max-h-0 overflow-hidden transition-all duration-500 text-left">
+                        <ul class="space-y-2 text-gray-600 mb-4 text-sm">
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Поставка оборудования</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Профессиональный монтаж</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Бренды: AML/HTH, GLONG, GEMAS</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Комплектующие и расходники</span></li>
+                        </ul>
+
+                        <div class="mt-4 bg-blue-50 rounded-lg p-3">
+                            <div class="flex justify-start items-baseline">
+                                <div class="text-gray-600 text-sm mr-2">Гарантия:</div>
+                                <div class="text-lg font-bold text-blue-700">12 месяцев</div>
                             </div>
+                            <button class="mt-3 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition duration-300 w-full text-sm">
+                                Заказать
+                            </button>
                         </div>
+                    </div>
+
+                    <div class="mt-4 flex justify-center">
+                        <button class="toggle-details-btn bg-blue-100 hover:bg-blue-200 text-blue-800 font-medium text-sm px-4 py-1.5 rounded-full shadow transition duration-300 flex items-center">
+                            <span>Подробнее</span>
+                            <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 2 -->
-            <div class="service-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden group transition-all duration-300 h-auto min-h-[18rem] hover:min-h-[30rem]">
-                <div class="p-6 relative h-full flex flex-col">
-                    <div class="w-20 h-20 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-blue-600 
-                               transition-all duration-500 
-                               group-hover:absolute group-hover:top-6 group-hover:left-6 group-hover:m-0 group-hover:w-16 group-hover:h-16">
-                        <i class="fas fa-tools text-3xl group-hover:text-2xl transition-all"></i>
+                <!-- Карточка 2 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg border border-blue-100 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <div class="relative h-48 bg-gradient-to-r from-blue-50 to-blue-100 flex items-center justify-center">
+                    <img src="assets/img/services/chemicals.jpg" alt="Химия для бассейнов" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full border-4 border-white flex items-center justify-center shadow-lg z-10">
+                        <i class="fas fa-flask text-2xl text-blue-600"></i>
                     </div>
-                    
-                    <h3 class="text-xl font-semibold text-center mb-4 px-4
-                              transition-all duration-300 opacity-100
-                              group-hover:opacity-0 group-hover:-translate-y-4">
-                        Замена плёнки
-                    </h3>
-                    
-                    <div class="service-content flex-grow overflow-hidden max-h-0 transition-all duration-500 group-hover:max-h-[24rem] group-hover:pt-8">
-                        <div class="pb-4">
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Демонтаж старой плёнки</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Монтаж новой ПВХ плёнки</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Ремонт повреждений</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Герметизация швов</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Замена крепежа</span>
-                                </li>
-                            </ul>
-                            
-                            <div class="price-block bg-blue-50 rounded-lg p-4 mt-4 text-center border border-blue-100">
-                                <div class="text-gray-600 text-sm mb-1">Стоимость:</div>
-                                <div class="text-2xl font-bold text-blue-700">15 000 ₽</div>
-                                <div class="text-xs text-gray-500 mt-1">за стандартный бассейн</div>
-                                <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition duration-300 w-full text-sm">
-                                    Заказать
-                                </button>
+                </div>
+                <div class="pt-10 pb-6 px-6 text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Химия для бассейнов</h3>
+                    <div class="mb-2 md:mb-0 md:h-6 h-4"></div>
+                    <div class="service-details max-h-0 overflow-hidden transition-all duration-500">
+                        <ul class="space-y-2 text-gray-600 mb-4 text-sm text-left">
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Профессиональные химикаты</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Кварцевый песок</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Комплексные наборы ухода</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Доставка по договоренности</span></li>
+                        </ul>
+                        <div class="mt-4 bg-blue-50 rounded-lg p-3 text-center">
+                            <div class="flex justify-center items-baseline">
+                                <div class="text-gray-600 text-sm mr-2">Цена:</div>
+                                <div class="text-lg font-bold text-blue-700">от 1000 ₽</div>
                             </div>
+                            <button class="mt-3 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition duration-300 w-full text-sm">Купить</button>
                         </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="toggle-details-btn bg-blue-100 hover:bg-blue-200 text-blue-800 font-medium text-sm px-4 py-1.5 rounded-full shadow transition duration-300 flex items-center mx-auto justify-center">
+                            <span>Подробнее</span>
+                            <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 3 -->
-            <div class="service-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden group transition-all duration-300 h-auto min-h-[18rem] hover:min-h-[30rem]">
-                <div class="p-6 relative h-full flex flex-col">
-                    <div class="w-20 h-20 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-blue-600 
-                               transition-all duration-500 
-                               group-hover:absolute group-hover:top-6 group-hover:left-6 group-hover:m-0 group-hover:w-16 group-hover:h-16">
-                        <i class="fas fa-flask text-3xl group-hover:text-2xl transition-all"></i>
+
+                <!-- Карточка 3 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg border border-blue-100 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <div class="relative h-48 bg-gradient-to-r from-blue-50 to-blue-100 flex items-center justify-center">
+                    <img src="assets/img/services/maintenance.jpg" alt="Обслуживание бассейнов" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full border-4 border-white flex items-center justify-center shadow-lg z-10">
+                        <i class="fas fa-calendar-check text-2xl text-blue-600"></i>
                     </div>
-                    
-                    <h3 class="text-xl font-semibold text-center mb-4 px-4
-                              transition-all duration-300 opacity-100
-                              group-hover:opacity-0 group-hover:-translate-y-4">
-                        Химия для бассейнов
-                    </h3>
-                    
-                    <div class="service-content flex-grow overflow-hidden max-h-0 transition-all duration-500 group-hover:max-h-[24rem]">
-                        <div class="pb-4">
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Профессиональные химикаты</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Доставка по области</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Консультация специалиста</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Подбор состава</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Экстренная дезинфекция</span>
-                                </li>
-                            </ul>
-                            
-                            <div class="price-block bg-blue-50 rounded-lg p-4 mt-4 text-center border border-blue-100">
-                                <div class="text-gray-600 text-sm mb-1">Стоимость:</div>
-                                <div class="text-2xl font-bold text-blue-700">1 500 ₽</div>
-                                <div class="text-xs text-gray-500 mt-1">за базовый набор</div>
-                                <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition duration-300 w-full text-sm">
-                                    Заказать
-                                </button>
+                </div>
+                <div class="pt-10 pb-6 px-6 text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Обслуживание бассейнов</h3>
+                    <div class="mb-2 md:mb-0 md:h-6 h-4"></div>
+                    <div class="service-details max-h-0 overflow-hidden transition-all duration-500">
+                        <ul class="space-y-2 text-gray-600 mb-4 text-sm text-left">
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Техническое обследование</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Контроль химического состава</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Регулярное или разовое обслуживание</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Аварийные выезды круглосуточно</span></li>
+                        </ul>
+                        <div class="mt-4 bg-blue-50 rounded-lg p-3 text-center">
+                            <div class="flex justify-center items-baseline">
+                                <div class="text-gray-600 text-sm mr-2">Стоимость:</div>
+                                <div class="text-lg font-bold text-blue-700">от 3 000 ₽</div>
                             </div>
+                            <button class="mt-3 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition duration-300 w-full text-sm">Заказать</button>
                         </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="toggle-details-btn bg-blue-100 hover:bg-blue-200 text-blue-800 font-medium text-sm px-4 py-1.5 rounded-full shadow transition duration-300 flex items-center mx-auto justify-center">
+                            <span>Подробнее</span>
+                            <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 4 -->
-            <div class="service-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden group transition-all duration-300 h-auto min-h-[18rem] hover:min-h-[30rem]">
-                <div class="p-6 relative h-full flex flex-col">
-                    <div class="w-20 h-20 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-blue-600 
-                               transition-all duration-500 
-                               group-hover:absolute group-hover:top-6 group-hover:left-6 group-hover:m-0 group-hover:w-16 group-hover:h-16">
-                        <i class="fas fa-calendar-check text-3xl group-hover:text-2xl transition-all"></i>
+
+                <!-- Карточка 4 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg border border-blue-100 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <div class="relative h-48 bg-gradient-to-r from-blue-50 to-blue-100 flex items-center justify-center">
+                    <img src="assets/img/services/consultation.jpg" alt="Консультации по бассейнам" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full border-4 border-white flex items-center justify-center shadow-lg z-10">
+                        <i class="fas fa-headset text-2xl text-blue-600"></i>
                     </div>
-                    
-                    <h3 class="text-xl font-semibold text-center mb-4 px-4
-                              transition-all duration-300 opacity-100
-                              group-hover:opacity-0 group-hover:-translate-y-4">
-                        Абонентское обслуживание
-                    </h3>
-                    
-                    <div class="service-content flex-grow overflow-hidden max-h-0 transition-all duration-500 group-hover:max-h-[24rem]">
-                        <div class="pb-4">
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Гибкие тарифы</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Персональный менеджер</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Скидки на услуги</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Круглосуточная поддержка</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
-                                    <span class="text-sm">Ежемесячные отчёты</span>
-                                </li>
-                            </ul>
-                            
-                            <div class="price-block bg-blue-50 rounded-lg p-4 mt-4 text-center border border-blue-100">
-                                <div class="text-gray-600 text-sm mb-1">Стоимость:</div>
-                                <div class="text-2xl font-bold text-blue-700">5 000 ₽</div>
-                                <div class="text-xs text-gray-500 mt-1">в месяц</div>
-                                <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition duration-300 w-full text-sm">
-                                    Заказать
-                                </button>
+                </div>
+                <div class="pt-10 pb-6 px-6 text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Профессиональные консультации</h3>
+                    <div class="mb-2 md:mb-0 md:h-6 h-4"></div>
+                    <div class="service-details max-h-0 overflow-hidden transition-all duration-500">
+                        <ul class="space-y-2 text-gray-600 mb-4 text-sm text-left">
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Подбор оборудования</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Расчет химии для бассейна</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Решение технических проблем</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2 text-xs"></i><span>Бесплатный выезд в черте Кемерово</span></li>
+                        </ul>
+                        <div class="mt-4 bg-blue-50 rounded-lg p-3 text-center">
+                            <div class="flex justify-center items-baseline">
+                                <div class="text-gray-600 text-sm mr-2">Стоимость:</div>
+                                <div class="text-lg font-bold text-blue-700">Бесплатно</div>
                             </div>
+                            <button class="mt-3 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition duration-300 w-full text-sm">Позвонить</button>
                         </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="toggle-details-btn bg-blue-100 hover:bg-blue-200 text-blue-800 font-medium text-sm px-4 py-1.5 rounded-full shadow transition duration-300 flex items-center mx-auto justify-center">
+                            <span>Подробнее</span>
+                            <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    .service-card {
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    
-    .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-    
-    .service-content {
-        transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    
-    .price-block {
-        transition: all 0.4s ease;
-    }
-</style>
 
     <!-- Before/After Gallery -->
     <section id="gallery" class="py-16 px-4 bg-gray-100">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Наши работы</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery Item 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-                    <div class="before-after-container h-72 relative">
-                        <img src="https://images.unsplash.com/photo-1598940603846-a1edd0ef2574?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="До чистки" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="before-after-slider">
-                            <img src="https://images.unsplash.com/photo-1560256608-43f0b6f7588e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="После чистки" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        </div>
-                        <input type="range" min="0" max="100" value="50" class="slider">
-                        <div class="absolute bottom-4 left-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">До</div>
-                        <div class="absolute bottom-4 right-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">После</div>
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Наши работы</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Gallery Item 1 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+                <div class="before-after-container h-72 relative">
+                    <img src="assets/img/gallery/clean-pool.jpg" 
+                         alt="До чистки" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="before-after-slider">
+                        <img src="assets/img/gallery/dirty-pool.jpg" 
+                             alt="После чистки" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-semibold text-lg">Кемерово, комплексная чистка</h3>
-                        <p class="text-sm text-gray-500 mt-1">Полная уборка бассейна с заменой воды (1 день)</p>
-                    </div>
+                    <input type="range" min="0" max="100" value="50" class="slider">
+                    <div class="absolute bottom-4 left-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">До</div>
+                    <div class="absolute bottom-4 right-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">После</div>
                 </div>
-                
-                <!-- Gallery Item 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-                    <div class="before-after-container h-72 relative">
-                        <img src="https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="До замены плёнки" class="w-full h-full object-cover">
-                        <div class="before-after-slider">
-                            <img src="https://images.unsplash.com/photo-1559732276-8e94d4e63f8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="После замены плёнки" class="w-full h-full object-cover">
-                        </div>
-                        <input type="range" min="0" max="100" value="50" class="slider">
-                        <div class="absolute bottom-4 left-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">До</div>
-                        <div class="absolute bottom-4 right-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">После</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-semibold text-lg">Берёзово, замена плёнки</h3>
-                        <p class="text-sm text-gray-500 mt-1">Полная замена ПВХ покрытия бассейна (2 дня)</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 3 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-                    <div class="before-after-container h-72 relative">
-                        <img src="https://images.unsplash.com/photo-1560743641-3914f2aae911?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="До ремонта" class="w-full h-full object-cover">
-                        <div class="before-after-slider">
-                            <img src="https://images.unsplash.com/photo-1560743641-4f20272838c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="После ремонта" class="w-full h-full object-cover">
-                        </div>
-                        <input type="range" min="0" max="100" value="50" class="slider">
-                        <div class="absolute bottom-4 left-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">До</div>
-                        <div class="absolute bottom-4 right-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">После</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-semibold text-lg">Топки, ремонт бассейна</h3>
-                        <p class="text-sm text-gray-500 mt-1">Восстановление повреждённых участков (3 дня)</p>
-                    </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg">Кемерово, комплексная чистка</h3>
+                    <p class="text-sm text-gray-500 mt-1">Полная уборка бассейна с заменой воды (1 день)</p>
                 </div>
             </div>
             
-            <div class="text-center mt-10">
-                <button class="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 inline-flex items-center shadow-md hover:shadow-lg group">
-                    <span>Больше наших работ</span>
-                    <i class="fas fa-arrow-right ml-3 transition-transform duration-300 group-hover:translate-x-1"></i>
-                </button>
+            <!-- Gallery Item 2 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+                <div class="before-after-container h-72 relative">
+                    <img src="assets/img/gallery/after-pvc.jpg" 
+                         alt="До замены плёнки" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="before-after-slider">
+                        <img src="assets/img/gallery/before-pvc.jpg" 
+                             alt="После замены плёнки" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <input type="range" min="0" max="100" value="50" class="slider">
+                    <div class="absolute bottom-4 left-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">До</div>
+                    <div class="absolute bottom-4 right-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">После</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg">Берёзово, замена плёнки</h3>
+                    <p class="text-sm text-gray-500 mt-1">Полная замена ПВХ покрытия бассейна (2 дня)</p>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 3 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+                <div class="before-after-container h-72 relative">
+                    <img src="assets/img/gallery/after-repair.webp" 
+                         alt="До ремонта" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="before-after-slider">
+                        <img src="assets/img/gallery/before-repair.jpg" 
+                             alt="После ремонта" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <input type="range" min="0" max="100" value="50" class="slider">
+                    <div class="absolute bottom-4 left-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">До</div>
+                    <div class="absolute bottom-4 right-4 bg-white/90 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">После</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg">Топки, ремонт бассейна</h3>
+                    <p class="text-sm text-gray-500 mt-1">Восстановление повреждённых участков (3 дня)</p>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Кнопка без изменений 
+        <div class="text-center mt-10">
+            <button class="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 inline-flex items-center shadow-md hover:shadow-lg group">
+                <span>Больше наших работ</span>
+                <i class="fas fa-arrow-right ml-3 transition-transform duration-300 group-hover:translate-x-1"></i>
+            </button>
+        </div>
+    </div> -->
+</section>
 
     <!-- Testimonials -->
     <section id="testimonials" class="py-16 px-4 bg-white">
@@ -567,203 +602,204 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Value Section -->
-    <section class="py-16 px-4 bg-blue-800 text-white">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Почему выбирают нас</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="bg-blue-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-file-signature text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Официальный договор</h3>
-                    <p class="text-blue-100">Все услуги оказываются по договору с гарантией</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="bg-blue-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-certificate text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Сертифицированные химикаты</h3>
-                    <p class="text-blue-100">Используем только безопасную, разрешённую химию</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="bg-blue-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Выезд в течение 24 часов</h3>
-                    <p class="text-blue-100">Срочный выезд в день обращения</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="bg-blue-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-shield-alt text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Гарантия до 2 лет</h3>
-                    <p class="text-blue-100">Долгосрочные гарантии на все виды работ</p>
-                </div>
-            </div>
-            
-            <div class="mt-12 bg-blue-700 rounded-lg p-6 max-w-3xl mx-auto text-center">
-                <h3 class="text-xl font-semibold mb-4">Работаем не только в Кемерово, но и по всей области!</h3>
-                <p>Обслуживаем бассейны в радиусе 150 км от Кемерово, включая отдалённые посёлки и дачные кооперативы.</p>
+            <div class="mt-10 text-center">
+                <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:underline">
+                    <span>Больше отзывов на 2ГИС</span>
+                    <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Service Area Map -->
-<section class="py-16 px-4 bg-gray-50">
-    <div class="container mx-auto max-w-6xl">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Зона обслуживания</h2>
-        
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
-            <div class="p-6">
-                <div class="flex flex-col md:flex-row items-center justify-between mb-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4 md:mb-0">Работаем в радиусе 150 км от Кемерово</h3>
-                    <div class="flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Кузбасс и прилегающие районы</span>
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Зона обслуживания</h2>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row items-center justify-between mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 md:mb-0">Работаем в радиусе 150 км от Кемерово</h3>
+                        <div class="flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Кузбасс и прилегающие районы</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Yandex Map Container -->
-                <div id="yandex-map" class="h-96 rounded-lg overflow-hidden relative">
-                    <!-- Service radius indicator -->
-                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white px-3 py-1 rounded-full shadow text-sm font-medium z-10">
-                        Радиус обслуживания: 150 км
+                    
+                    <!-- Yandex Map Container -->
+                    <div id="yandex-map" class="h-96 rounded-lg overflow-hidden relative">
+                        <!-- Service radius indicator -->
+                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white px-3 py-1 rounded-full shadow text-sm font-medium z-10">
+                            Радиус обслуживания: 150 км
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Key cities list -->
-                <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-blue-600 rounded-full mr-2"></div>
-                        <span class="text-sm">Кемерово</span>
+                    
+                    <!-- Key cities list -->
+                    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-600 rounded-full mr-2"></div>
+                            <span class="text-sm">Кемерово</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                            <span class="text-sm">Новокузнецк</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                            <span class="text-sm">Прокопьевск</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                            <span class="text-sm">Междуреченск</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                            <span class="text-sm">Ленинск-Кузнецкий</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                            <span class="text-sm">Юрга</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                            <span class="text-sm">Белово</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                            <span class="text-sm">Анжеро-Судженск</span>
+                        </div>
                     </div>
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                        <span class="text-sm">Новокузнецк</span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                        <span class="text-sm">Прокопьевск</span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                        <span class="text-sm">Междуреченск</span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                        <span class="text-sm">Ленинск-Кузнецкий</span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                        <span class="text-sm">Юрга</span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                        <span class="text-sm">Белово</span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                        <span class="text-sm">Анжеро-Судженск</span>
-                    </div>
-                </div>
-                
-                <!-- Stats -->
-                <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div class="bg-blue-50 p-3 rounded-lg">
-                        <div class="text-blue-600 font-bold">150 км</div>
-                        <div class="text-sm text-gray-600">Радиус выезда</div>
-                    </div>
-                    <div class="bg-blue-50 p-3 rounded-lg">
-                        <div class="text-blue-600 font-bold">24 ч</div>
-                        <div class="text-sm text-gray-600">Время реагирования</div>
-                    </div>
-                    <div class="bg-blue-50 p-3 rounded-lg">
-                        <div class="text-blue-600 font-bold">50+</div>
-                        <div class="text-sm text-gray-600">Обслуживаемых населенных пунктов</div>
-                    </div>
-                    <div class="bg-blue-50 p-3 rounded-lg">
-                        <div class="text-blue-600 font-bold">8 лет</div>
-                        <div class="text-sm text-gray-600">Опыта работы</div>
+                    
+                    <!-- Stats -->
+                    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <div class="text-blue-600 font-bold">150 км</div>
+                            <div class="text-sm text-gray-600">Радиус выезда</div>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <div class="text-blue-600 font-bold">24 ч</div>
+                            <div class="text-sm text-gray-600">Время реагирования</div>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <div class="text-blue-600 font-bold">50+</div>
+                            <div class="text-sm text-gray-600">Обслуживаемых населенных пунктов</div>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <div class="text-blue-600 font-bold">24 года</div>
+                            <div class="text-sm text-gray-600">Опыта работы</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Yandex Maps API -->
-<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
-
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-        // Координаты Кемерово (центр карты)
-        const kemerovo = [55.354968, 86.087314];
-        
-        // Инициализация карты
-        ymaps.ready(init);
-        
-        function init() {
-            const map = new ymaps.Map("yandex-map", {
-                center: kemerovo,
-                zoom: 9,
-                controls: ['zoomControl']
-            });
+    <!-- About Company Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">О компании и партнёрах</h2>
             
-            // Стиль карты (можно выбрать: dark, light, etc)
-            map.options.set('suppressMapOpenBlock', true);
-            
-            // Круг зоны обслуживания (150 км)
-            const serviceArea = new ymaps.Circle([
-                kemerovo,
-                150000 // радиус в метрах
-            ], {
-                fillColor: "#3b82f680",
-                strokeColor: "#1e40af",
-                strokeOpacity: 0.8,
-                strokeWidth: 2
-            });
-            
-            map.geoObjects.add(serviceArea);
-            
-            // Добавляем метки для городов
-            const cities = [
-                { name: "Кемерово", coords: [55.354968, 86.087314], color: "#1e40af" },
-                { name: "Новокузнецк", coords: [53.757572, 87.136093], color: "#3b82f6" },
-                { name: "Прокопьевск", coords: [53.895355, 86.744657], color: "#3b82f6" },
-                { name: "Междуреченск", coords: [53.693575, 88.065342], color: "#3b82f6" },
-                { name: "Ленинск-Кузнецкий", coords: [54.660361, 86.169937], color: "#3b82f6" },
-                { name: "Юрга", coords: [55.723125, 84.886174], color: "#3b82f6" },
-                { name: "Белово", coords: [54.422678, 86.297878], color: "#3b82f6" },
-                { name: "Анжеро-Судженск", coords: [56.081944, 86.027500], color: "#3b82f6" }
-            ];
-            
-            cities.forEach(city => {
-                const placemark = new ymaps.Placemark(city.coords, {
-                    hintContent: city.name,
-                    balloonContent: `<b>${city.name}</b>`
-                }, {
-                    preset: city.name === "Кемерово" 
-                        ? 'islands#blueCircleDotIcon' 
-                        : 'islands#blueCircleIcon',
-                    iconColor: city.color
-                });
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- About Company -->
+                <div class="animate-fade-in-up">
+                    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg border border-blue-100">
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-800 flex items-center">
+                            <i class="fas fa-building mr-3 text-blue-600"></i> Водный Мир Кемерово
+                        </h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Мы работаем на рынке обслуживания бассейнов с 2001 года. За 24 года мы обслужили тысячи бассейнов различной сложности - от частных домов до крупных баз отдыха и муниципальных объектов.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar-check text-blue-600 mr-2"></i>
+                                <span>С 2001 года</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users text-blue-600 mr-2"></i>
+                                <span>Физ. и юр. лица</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
+                                <span>Кемерово и область</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-certificate text-blue-600 mr-2"></i>
+                                <span>Официальный договор</span>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                            <h4 class="font-semibold mb-2 text-blue-800">Наши клиенты:</h4>
+                            <ul class="grid grid-cols-2 gap-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-home mr-2 text-blue-600"></i> Частные дома
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-umbrella-beach mr-2 text-blue-600"></i> Базы отдыха
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-building mr-2 text-blue-600"></i> Загородные комплексы
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-city mr-2 text-blue-600"></i> Муниципальные организации
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 
-                map.geoObjects.add(placemark);
-            });
-            
-            // Центрируем карту по зоне обслуживания
-            map.setBounds(serviceArea.geometry.getBounds());
-        }
-    });
-</script>
+                <!-- Partners -->
+                <div class="animate-fade-in-up animation-delay-200">
+                    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg border border-blue-100">
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-800 flex items-center">
+                            <i class="fas fa-handshake mr-3 text-blue-600"></i> Наши партнёры
+                        </h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Мы сотрудничаем с крупнейшими мировыми производителями оборудования и химии для бассейнов, что позволяет нам предлагать клиентам качественные решения по конкурентным ценам.
+                        </p>
+                        
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="partner-logo bg-white p-4 rounded-lg shadow-sm flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-blue-600 text-2xl mb-1"><i class="fas fa-flag"></i></div>
+                                    <span class="text-sm font-medium">AML/HTH</span>
+                                    <div class="text-xs text-gray-500">Испания</div>
+                                </div>
+                            </div>
+                            <div class="partner-logo bg-white p-4 rounded-lg shadow-sm flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-blue-600 text-2xl mb-1"><i class="fas fa-flag"></i></div>
+                                    <span class="text-sm font-medium">GLONG</span>
+                                    <div class="text-xs text-gray-500">Китай</div>
+                                </div>
+                            </div>
+                            <div class="partner-logo bg-white p-4 rounded-lg shadow-sm flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-blue-600 text-2xl mb-1"><i class="fas fa-flag"></i></div>
+                                    <span class="text-sm font-medium">GEMAS</span>
+                                    <div class="text-xs text-gray-500">Турция</div>
+                                </div>
+                            </div>
+                            <div class="partner-logo bg-white p-4 rounded-lg shadow-sm flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-blue-600 text-2xl mb-1"><i class="fas fa-flag"></i></div>
+                                    <span class="text-sm font-medium">Маркопул</span>
+                                    <div class="text-xs text-gray-500">Россия</div>
+                                </div>
+                            </div>
+                            <div class="partner-logo bg-white p-4 rounded-lg shadow-sm flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-blue-600 text-2xl mb-1"><i class="fas fa-flag"></i></div>
+                                    <span class="text-sm font-medium">ISL</span>
+                                    <div class="text-xs text-gray-500">Россия</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-16 px-4 bg-gray-100">
@@ -772,65 +808,85 @@
                 <div class="md:flex">
                     <div class="md:w-1/2 p-8 md:p-12 bg-blue-600 text-white">
                         <h2 class="text-3xl font-bold mb-6">Свяжитесь с нами</h2>
-                        <p class="mb-6">Оставьте заявку и мы перезвоним вам в течение 15 минут для уточнения деталей.</p>
+                        <p class="mb-6">Оставьте заявку и мы перезвоним для уточнения деталей.</p>
                         
                         <div class="space-y-4 mb-8">
                             <div class="flex items-center">
                                 <i class="fas fa-phone-alt mr-3"></i>
-                                <a href="tel:+73842234567" class="hover:underline">+7 (3842) 36-22-76</a>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fab fa-telegram mr-3"></i>
-                                <a href="https://t.me/chistye_basseyny" class="hover:underline">@chistye_basseyny</a>
+                                <div>
+                                    <a href="tel:+73842362276" class="hover:underline block">+7 (3842) 36-22-76</a>
+                                    <span class="text-sm text-blue-200">Офис (09:00-15:00)</span>
+                                </div>
                             </div>
                             <div class="flex items-center">
                                 <i class="fab fa-whatsapp mr-3"></i>
-                                <a href="https://wa.me/79039448473" class="hover:underline">+7 903 944-84-73</a>
+                                <div>
+                                    <a href="https://wa.me/79039448473" class="hover:underline block">+7 903 944-84-73</a>
+                                    <span class="text-sm text-blue-200">Принимаем звонки до 21:00</span>
+                                </div>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-map-marker-alt mr-3"></i>
-                                <span>Кемерово, Кузнецкий пр., 14а</span>
+                                <span>Кемерово, пр-т Кузнецкий, 14А</span>
                             </div>
                         </div>
                         
                         <div class="bg-blue-700 p-4 rounded-lg">
-                            <h3 class="font-semibold mb-2">График работы:</h3>
-                            <p>Пн-Пт: 9:00 - 15:00<br>
-                            Сб-Вс: Выходной<br>
-                            <span class="text-blue-200">Экстренные вызовы - круглосуточно</span></p>
+                            <h3 class="font-semibold mb-2">Реквизиты компании:</h3>
+                            <p class="text-sm">ООО "ВМК"<br>
+                            ИНН 4205093740<br>
+                            650000, обл. Кемеровская, г. Кемерово,<br>
+                            пр-т. Кузнецкий, 14А, оф.2<br><br>
+                            ИП Гильдеев А.М.<br>
+                            ИНН 420519254201<br>
+                        </p>
                         </div>
                     </div>
                     
                     <div class="md:w-1/2 p-8 md:p-12">
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Оставить заявку</h3>
-                        <form class="space-y-4">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Получите бесплатную консультацию</h3>
+                        <form class="space-y-4" id="contact-form">
                             <div class="relative">
                                 <label for="name" class="block text-gray-700 mb-2 text-sm font-medium">Ваше имя</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" required>
                                 <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none top-7">
                                     <i class="far fa-user text-gray-400"></i>
                                 </div>
                             </div>
                             <div>
                                 <label for="phone" class="block text-gray-700 mb-1">Телефон</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                             </div>
                             <div>
                                 <label for="service" class="block text-gray-700 mb-1">Услуга</label>
                                 <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     <option value="">Выберите услугу</option>
-                                    <option value="cleaning">Чистка бассейна</option>
-                                    <option value="film">Замена плёнки</option>
+                                    <option value="equipment">Оборудование и монтаж</option>
                                     <option value="chemicals">Химия для бассейна</option>
-                                    <option value="contract">Абонентское обслуживание</option>
-                                    <option value="other">Другое</option>
+                                    <option value="cleaning">Обслуживание бассейна</option>
+                                    <option value="consultation">Консультация</option>
                                 </select>
                             </div>
                             <div>
                                 <label for="message" class="block text-gray-700 mb-1">Сообщение (необязательно)</label>
                                 <textarea id="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded transition duration-300">Отправить заявку</button>
+                            
+                            <!-- Блок с галочкой согласия -->
+                            <div class="flex items-start">
+                                <input type="checkbox" id="contact-privacy-consent" required
+                                    class="mt-1 mr-2 rounded focus:ring-blue-500 h-4 w-4 text-blue-600 flex-shrink-0">
+                                <label for="contact-privacy-consent" class="text-xs text-gray-600 text-left">
+                                    Я соглашаюсь с 
+                                    <a href="/privacy-policy.html" class="text-blue-600 hover:underline">политикой конфиденциальности</a>
+                                    и обработкой персональных данных
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded transition duration-300 relative overflow-hidden group">
+                                <span class="relative z-10">Отправить заявку</span>
+                                <span class="absolute inset-0 bg-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -840,74 +896,85 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 text-gray-600 py-10 px-4">
-        <div class="container mx-auto max-w-6xl grid md:grid-cols-3 gap-8">
+        <div class="container mx-auto max-w-6xl grid md:grid-cols-4 gap-8">
+            <!-- Лого и описание -->
             <div>
                 <div class="flex items-center space-x-2 mb-3">
                     <i class="fas fa-swimming-pool text-blue-500 text-2xl"></i>
                     <span class="text-xl font-bold text-gray-800">Водный Мир Кемерово</span>
                 </div>
-                <p class="text-sm">Профессиональное обслуживание бассейнов в Кемерово и области с 2015 года.</p>
+                <p class="text-sm mb-4">Оборудование и обслуживание бассейнов с 2001 года</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-blue-500 hover:text-blue-700">
+                        <i class="fab fa-vk text-xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-500 hover:text-blue-700">
+                        <i class="fab fa-telegram text-xl"></i>
+                    </a>
+                </div>
             </div>
+            
+            <!-- Юридическая информация -->
+            <div>
+                <h3 class="font-semibold mb-3 text-gray-800">Компания</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#consultation" class="hover:text-blue-600">О нас</a></li>
+                    <li><a href="#services" class="hover:text-blue-600">Услуги</a></li>
+                    <li><a href="#gallery" class="hover:text-blue-600">Наши работы</a></li>
+                    <li><a href="#testimonials" class="hover:text-blue-600">Отзывы</a></li>
+                </ul>
+            </div>
+            
+            <!-- Юридические документы -->
+            <div>
+                <h3 class="font-semibold mb-3 text-gray-800">Документы</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/privacy-policy.html" class="hover:text-blue-600">Политика конфиденциальности</a></li>
+                    <li><a href="/certificates.pdf" class="hover:text-blue-600">Сертификаты</a></li>
+                </ul>
+            </div>
+            
+            <!-- Контакты -->
             <div>
                 <h3 class="font-semibold mb-3 text-gray-800">Контакты</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="tel:+73842234567" class="hover:text-blue-600">+7 (3842) 23-45-67</a></li>
-                    <li><a href="https://wa.me/79001234567" class="hover:text-blue-600">WhatsApp</a></li>
-                    <li><a href="https://t.me/chistye_basseyny" class="hover:text-blue-600">Telegram</a></li>
-                    <li>Кемерово и область</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-semibold mb-3 text-gray-800">Информация</h3>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-blue-600">Политика конфиденциальности</a></li>
-                    <li><a href="#" class="hover:text-blue-600">О компании</a></li>
+                    <li class="flex items-start">
+                        <i class="fas fa-phone-alt mr-2 mt-1 text-blue-500"></i>
+                        <a href="tel:+73842362276" class="hover:text-blue-600">+7 (3842) 36-22-76</a>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fab fa-whatsapp mr-2 mt-1 text-blue-500"></i>
+                        <a href="https://wa.me/79039448473" class="hover:text-blue-600">WhatsApp</a>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mr-2 mt-1 text-blue-500"></i>
+                        <span>Кемерово, пр-т Кузнецкий, 14А</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-clock mr-2 mt-1 text-blue-500"></i>
+                        <span>Пн-Пт: 9:00-18:00</span>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="text-center text-xs mt-10">
-            © 2025 ООО "ВМК". Все права защищены.
+        
+        <!-- Нижняя часть футера -->
+        <div class="container mx-auto max-w-6xl border-t border-gray-200 mt-8 pt-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-xs text-gray-500 mb-4 md:mb-0">
+                    © 2025 ООО "ВМК", ИП Гильдеев А.М. Все права защищены.
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 text-xs">
+                    <span>ИНН: 4205093740</span>
+                    <span>ОГРН: 1054205228890</span>
+                    <a href="/requisites.pdf" class="text-blue-600 hover:underline">Реквизиты</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-        
-        // Before/After slider functionality
-        const sliders = document.querySelectorAll('.slider');
-        sliders.forEach(slider => {
-            slider.addEventListener('input', function() {
-                const sliderValue = this.value;
-                const sliderContainer = this.parentElement;
-                const beforeImage = sliderContainer.querySelector('.before-after-slider');
-                beforeImage.style.width = `${sliderValue}%`;
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
-                        document.getElementById('mobile-menu').classList.add('hidden');
-                    }
-                }
-            });
-        });
-    </script>
+    <!-- Yandex Maps API -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
