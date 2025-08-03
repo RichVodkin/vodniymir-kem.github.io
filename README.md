@@ -1,3 +1,3 @@
-# vodniymir-kem.github.io
+# RichVodkin.github.io
 
 Тест лендинга для ООО "ВМК" перед деплоем на хостинг
