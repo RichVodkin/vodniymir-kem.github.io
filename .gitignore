@@ -39,3 +39,10 @@ yarn-error.log*
 
 # Image optimization artifacts (if applicable)
 *.avif
+
+# Instructions/MDs
+INSTRUCTIONS.md
+QUICK_START.md
+QUICK_SETUP.md
+TELEGRAM_INFO.md
+TELEGRAM_SETUP.md
