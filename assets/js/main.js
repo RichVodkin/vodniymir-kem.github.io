@@ -1,3 +1,68 @@
+// Конфигурация Telegram
+const TELEGRAM_CONFIG = {
+    botToken: 'YOUR_BOT_TOKEN', // Замените на ваш токен бота
+    chatId: 'YOUR_CHAT_ID',     // Замените на ID чата/канала
+    apiUrl: 'https://api.telegram.org/bot'
+};
+
+// Функция для отправки сообщения в Telegram
+async function sendToTelegram(message) {
+    try {
+        const response = await fetch(`${TELEGRAM_CONFIG.apiUrl}${TELEGRAM_CONFIG.botToken}/sendMessage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CONFIG.chatId,
+                text: message,
+                parse_mode: 'HTML'
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (result.ok) {
+            console.log('Сообщение отправлено в Telegram');
+            return true;
+        } else {
+            console.error('Ошибка отправки в Telegram:', result);
+            return false;
+        }
+    } catch (error) {
+        console.error('Ошибка при отправке в Telegram:', error);
+        return false;
+    }
+}
+
+// Функция для форматирования сообщения
+function formatTelegramMessage(formData, formType) {
+    const timestamp = new Date().toLocaleString('ru-RU');
+    const emoji = formType === 'consultation' ? '📞' : '📝';
+    const title = formType === 'consultation' ? 'ЗАЯВКА НА КОНСУЛЬТАЦИЮ' : 'НОВАЯ ЗАЯВКА';
+    
+    let message = `${emoji} <b>${title}</b>\n\n`;
+    message += `📅 <b>Дата:</b> ${timestamp}\n`;
+    message += `👤 <b>Имя:</b> ${formData.name}\n`;
+    message += `📱 <b>Телефон:</b> ${formData.phone}\n`;
+    
+    if (formData.preferredContact) {
+        message += `💬 <b>Предпочтительный способ связи:</b> ${formData.preferredContact}\n`;
+    }
+    
+    if (formData.service) {
+        message += `🔧 <b>Услуга:</b> ${formData.service}\n`;
+    }
+    
+    if (formData.message) {
+        message += `💭 <b>Сообщение:</b> ${formData.message}\n`;
+    }
+    
+    message += `\n🌐 <b>Источник:</b> Сайт vodniymir-kem.ru`;
+    
+    return message;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     document.getElementById('menu-toggle').addEventListener('click', function() {
@@ -44,14 +109,138 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Checkbox validation for contact form
-    document.getElementById('contact-form')?.addEventListener('submit', function(e) {
-        const checkbox = document.getElementById('contact-privacy-consent');
+    // Обработка формы консультации
+    document.getElementById('consultation-form')?.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const checkbox = document.getElementById('consultation-privacy-consent');
         if (!checkbox?.checked) {
-            e.preventDefault();
             checkbox?.focus();
             checkbox?.parentElement.classList.add('animate-pulse');
             setTimeout(() => checkbox?.parentElement.classList.remove('animate-pulse'), 1000);
+            return;
+        }
+        
+        // Собираем данные формы
+        const formData = {
+            name: this.querySelector('input[type="text"]').value,
+            phone: this.querySelector('input[type="tel"]').value,
+            preferredContact: this.querySelector('button.bg-blue-500')?.textContent || 'Не указано'
+        };
+        
+        // Форматируем сообщение для Telegram
+        const message = formatTelegramMessage(formData, 'consultation');
+        
+        // Показываем индикатор загрузки
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Отправляем...';
+        submitBtn.disabled = true;
+        
+        try {
+            // Отправляем в Telegram
+            const success = await sendToTelegram(message);
+            
+            if (success) {
+                // Показываем успешное сообщение
+                submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Отправлено!';
+                submitBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                submitBtn.classList.add('bg-green-600');
+                
+                // Очищаем форму
+                this.reset();
+                
+                // Возвращаем кнопку в исходное состояние через 3 секунды
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.classList.remove('bg-green-600');
+                    submitBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                    submitBtn.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('Ошибка отправки');
+            }
+        } catch (error) {
+            // Показываем ошибку
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Ошибка';
+            submitBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            submitBtn.classList.add('bg-red-600');
+            
+            // Возвращаем кнопку в исходное состояние через 3 секунды
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('bg-red-600');
+                submitBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                submitBtn.disabled = false;
+            }, 3000);
+        }
+    });
+
+    // Обработка формы контактов
+    document.getElementById('contact-form')?.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const checkbox = document.getElementById('contact-privacy-consent');
+        if (!checkbox?.checked) {
+            checkbox?.focus();
+            checkbox?.parentElement.classList.add('animate-pulse');
+            setTimeout(() => checkbox?.parentElement.classList.remove('animate-pulse'), 1000);
+            return;
+        }
+        
+        // Собираем данные формы
+        const formData = {
+            name: this.querySelector('#name').value,
+            phone: this.querySelector('#phone').value,
+            service: this.querySelector('#service').value,
+            message: this.querySelector('#message').value
+        };
+        
+        // Форматируем сообщение для Telegram
+        const message = formatTelegramMessage(formData, 'contact');
+        
+        // Показываем индикатор загрузки
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Отправляем...';
+        submitBtn.disabled = true;
+        
+        try {
+            // Отправляем в Telegram
+            const success = await sendToTelegram(message);
+            
+            if (success) {
+                // Показываем успешное сообщение
+                submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Отправлено!';
+                submitBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                submitBtn.classList.add('bg-green-600');
+                
+                // Очищаем форму
+                this.reset();
+                
+                // Возвращаем кнопку в исходное состояние через 3 секунды
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.classList.remove('bg-green-600');
+                    submitBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                    submitBtn.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('Ошибка отправки');
+            }
+        } catch (error) {
+            // Показываем ошибку
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Ошибка';
+            submitBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            submitBtn.classList.add('bg-red-600');
+            
+            // Возвращаем кнопку в исходное состояние через 3 секунды
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('bg-red-600');
+                submitBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                submitBtn.disabled = false;
+            }, 3000);
         }
     });
 
